@@ -27,22 +27,22 @@
 <!-- (when applicable) -->
 <!-- * [front-end][4] -->
 
-#### Documentation
+<!-- #### Documentation -->
 <!-- API assignments only -->
 <!-- * [swagger][5] -->
 <!-- (All assignments) -->
 <!-- * [jsdoc][6] -->
 
-### Modules
-#### `modulename.js`
-##### Exported Values and Methods
+<!-- ### Modules -->
+<!-- #### `modulename.js` -->
+<!-- ##### Exported Values and Methods -->
 
-###### `foo(thing) -> string`
+<!-- ###### `foo(thing) -> string` -->
 <!-- If you finished everything, you should be able to copy/paste the lab requirements and put them in present tense. -->
-Usage Notes or examples
+<!-- Usage Notes or examples -->
 
-###### `bar(array) -> array`
-Usage Notes or examples
+<!-- ###### `bar(array) -> array` -->
+<!-- Usage Notes or examples -->
 
 ### Setup
 #### `.env` requirements
