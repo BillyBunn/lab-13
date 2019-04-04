@@ -3,6 +3,8 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const faker = require('faker');
+
 
 const users = new mongoose.Schema({
   username: {type:String, required:true, unique:true},
@@ -65,6 +67,8 @@ users.methods.generateToken = function() {
     id: this._id,
     role: this.role,
   };
+
+  // let secret = 
 
   let options = {
     expiresIn: 1000 * 60 * 15, // = 15 minutes
