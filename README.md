@@ -8,7 +8,7 @@
 <!-- travis build -->
 [2]: https://travis-ci.com/401-advanced-javascript-billybunn/lab-13
 <!-- back-end -->
-[3]: http://xyz.com
+[3]: https://billybunn-401-lab-13.herokuapp.com/
 <!-- front-end -->
 [4]: http://xyz.com
 <!-- swagger -->
