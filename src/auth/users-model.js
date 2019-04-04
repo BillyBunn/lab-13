@@ -71,7 +71,7 @@ users.methods.generateToken = function() {
   // let secret = 
 
   let options = {
-    expiresIn: 1000 * 60 * 15, // = 15 minutes
+    expiresIn: 60 * 15, // = 15 minutes
   };
   
   return jwt.sign(token, process.env.SECRET, options);

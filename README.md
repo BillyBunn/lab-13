@@ -6,7 +6,7 @@
 <!-- PR (working into submission) -->
 [1]: https://github.com/BillyBunn/lab-13
 <!-- travis build -->
-[2]: https://www.travis-ci.com/YOUR_ORG_NAME/REPO_NAME
+[2]: https://travis-ci.com/BillyBunn/lab-13
 <!-- back-end -->
 [3]: http://xyz.com
 <!-- front-end -->
@@ -26,13 +26,13 @@
 <!-- (when applicable) -->
 * [back-end][3]
 <!-- (when applicable) -->
-* [front-end][4]
+<!-- * [front-end][4] -->
 
 #### Documentation
 <!-- API assignments only -->
-* [swagger][5]
+<!-- * [swagger][5] -->
 <!-- (All assignments) -->
-* [jsdoc][6]
+<!-- * [jsdoc][6] -->
 
 ### Modules
 #### `modulename.js`
@@ -50,6 +50,7 @@ Usage Notes or examples
 * `npm i`
 * `PORT` - assign a port number
 * `MONGODB_URI` - URL to the running mongo instance/db
+* `SECRET` - secret to sign/verify JWT token
 
 
 #### Running the app
