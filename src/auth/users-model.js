@@ -39,6 +39,14 @@ users.statics.createFromOauth = function(email) {
 
 };
 
+users.statics.authenticateBearer = function(token) {
+  let parsedToken = jwt.verify(token, process.env.SECRET);
+  console.log('parsedToken:', parsedToken);
+  let id = parsedToken.id;
+  return this.findOne({_id:id});
+
+};
+
 users.statics.authenticateBasic = function(auth) {
   let query = {username:auth.username};
   return this.findOne(query)
