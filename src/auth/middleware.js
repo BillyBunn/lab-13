@@ -1,4 +1,7 @@
 'use strict';
+/*
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTU2MzcyZmNmZDA5YjFkOTM3YTE5NCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNTU0MzQzMDU3fQ.v3Rb-EK3m2hY5ftJ-o0jOGdWOnNj0bww2EkuOATng0I
+*/
 
 const User = require('./users-model.js');
 
@@ -10,6 +13,8 @@ module.exports = (req, res, next) => {
     switch( authType.toLowerCase() ) {
       case 'basic': 
         return _authBasic(authString);
+      case 'bearer':
+        return _authBearer(authString);
       default: 
         return _authError();
     }
@@ -28,6 +33,16 @@ module.exports = (req, res, next) => {
     
     return User.authenticateBasic(auth)
       .then(user => _authenticate(user) )
+      .catch(next);
+  }
+  /**
+   * @function _authBearer
+   * Called to authenticate a sign-in with a Bearer Header. Takes a user token and runs User bearer authentication method to verify the token.
+   * @param  {string} str a string of the user's token
+   */
+  function _authBearer(str) {
+    return User.authenticateBearer(str)
+      .then(user => _authenticate(user))
       .catch(next);
   }
 
