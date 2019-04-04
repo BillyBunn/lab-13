@@ -6,7 +6,7 @@
 <!-- PR (working into submission) -->
 [1]: https://github.com/401-advanced-javascript-billybunn/lab-13/pull/1
 <!-- travis build -->
-[2]: https://travis-ci.com/BillyBunn/lab-13
+[2]: https://travis-ci.com/401-advanced-javascript-billybunn/lab-13
 <!-- back-end -->
 [3]: http://xyz.com
 <!-- front-end -->
