@@ -3,6 +3,8 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const faker = require('faker');
+
 
 const users = new mongoose.Schema({
   username: {type:String, required:true, unique:true},
@@ -39,6 +41,14 @@ users.statics.createFromOauth = function(email) {
 
 };
 
+users.statics.authenticateBearer = function(token) {
+  let parsedToken = jwt.verify(token, process.env.SECRET);
+  console.log('parsedToken:', parsedToken);
+  let id = parsedToken.id;
+  return this.findOne({_id:id});
+
+};
+
 users.statics.authenticateBasic = function(auth) {
   let query = {username:auth.username};
   return this.findOne(query)
@@ -57,8 +67,14 @@ users.methods.generateToken = function() {
     id: this._id,
     role: this.role,
   };
+
+  // let secret = 
+
+  let options = {
+    expiresIn: 60 * 15, // = 15 minutes
+  };
   
-  return jwt.sign(token, process.env.SECRET);
+  return jwt.sign(token, process.env.SECRET, options);
 };
 
 module.exports = mongoose.model('users', users);
